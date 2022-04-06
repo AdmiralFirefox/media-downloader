@@ -1,13 +1,11 @@
 import { ChangeEvent, FC, FormEvent } from "react";
 import { IconContext } from "react-icons";
 import { BsFillTrashFill } from "react-icons/bs";
-import { FaPaste } from "react-icons/fa";
 import styles from "../../styles/sections/FormSection.module.scss";
 
 interface FormSectionProps {
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  pasteClipboard: () => Promise<void>;
   clearText: () => void;
   pastedLink: string;
   alertMessage: string;
@@ -19,7 +17,6 @@ const FormSection: FC<FormSectionProps> = ({
   handleChange,
   alertMessage,
   clearText,
-  pasteClipboard,
 }) => {
   return (
     <>
@@ -45,19 +42,6 @@ const FormSection: FC<FormSectionProps> = ({
             }}
           >
             <BsFillTrashFill />
-          </IconContext.Provider>
-        </button>
-
-        <button
-          className={styles["paste-icon-wrapper"]}
-          onClick={pasteClipboard}
-        >
-          <IconContext.Provider
-            value={{
-              className: styles["paste-icon"],
-            }}
-          >
-            <FaPaste />
           </IconContext.Provider>
         </button>
       </div>

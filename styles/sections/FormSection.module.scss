@@ -69,7 +69,6 @@
     background: theme-provider.$red-color;
     border: none;
     padding: 0.8em;
-    margin-right: 2em;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -83,29 +82,6 @@
     }
 
     .trash-icon {
-      font-size: 1.7rem;
-      color: theme-provider.$white-color;
-    }
-  }
-
-  // Paste Icon
-  .paste-icon-wrapper {
-    background: theme-provider.$slightly-dark-blue;
-    border: none;
-    padding: 0.8em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-      background: theme-provider.$slightly-dark-blue-hover;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    .paste-icon {
       font-size: 1.7rem;
       color: theme-provider.$white-color;
     }

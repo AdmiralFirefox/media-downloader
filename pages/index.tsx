@@ -36,15 +36,6 @@ const Home: NextPage = () => {
     setPastedLink("");
   };
 
-  const pasteClipboard = async () => {
-    try {
-      const copiedLink = await navigator.clipboard.readText();
-      setPastedLink(copiedLink);
-    } catch (err) {
-      console.log("Failed to read clipboard contents: ", err);
-    }
-  };
-
   return (
     <>
       <header className={styles["web-header"]}>
@@ -69,7 +60,6 @@ const Home: NextPage = () => {
               pastedLink={pastedLink}
               alertMessage={alertMessage}
               clearText={clearText}
-              pasteClipboard={pasteClipboard}
             />
           </>
         ) : (
