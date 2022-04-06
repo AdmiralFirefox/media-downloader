@@ -1,0 +1,53 @@
+@use "themeprovider/themeprovider" as theme-provider;
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+
+  .form-wrapper {
+    background: theme-provider.$slightly-light-blue;
+    width: min(90%, 40em);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5em 1.3em;
+    border-radius: 20px;
+
+    input {
+      padding: 1em;
+      outline: none;
+      border: none;
+      box-shadow: none;
+      color: theme-provider.$black-color;
+      font-size: 1rem;
+      font-weight: 700;
+
+      &::placeholder {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+
+    button {
+      border: none;
+      padding: 1em;
+      background: theme-provider.$light-blue;
+      color: theme-provider.$white-color;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (min-width: theme-provider.$small-media-query-value) {
+  .form-container {
+    .form-wrapper {
+      flex-direction: row;
+      justify-content: center;
+
+      input {
+        width: min(100%, 30em);
+      }
+    }
+  }
+}

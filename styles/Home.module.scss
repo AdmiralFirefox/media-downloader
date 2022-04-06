@@ -1,0 +1,40 @@
+@use "./themeprovider/themeprovider" as theme-provider;
+
+.web-header {
+  background: theme-provider.$dark-blue;
+  padding: 1.3em 2em;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  h1 {
+    color: theme-provider.$white-color;
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+  }
+
+  @supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    h1 {
+      font-size: min(max(1.8rem, 2.8vw), 2.2rem);
+    }
+  }
+
+  div {
+    position: relative;
+    width: 5.5em;
+    height: 5.5em;
+  }
+}
+
+@media (min-width: theme-provider.$small-media-query-value) {
+  .web-header {
+    flex-direction: row;
+    justify-content: center;
+
+    h1 {
+      margin-right: 0.5em;
+      margin-top: 0em;
+    }
+  }
+}
