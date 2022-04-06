@@ -13,7 +13,7 @@ const Home: NextPage = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (pastedLink.includes("https://")) {
+    if (pastedLink.includes("https://") && pastedLink !== "") {
       setVideoUrl(pastedLink);
       setAlertMessage("");
     } else {
@@ -25,10 +25,23 @@ const Home: NextPage = () => {
     setPastedLink(e.target.value);
   };
 
-  const clearVideoUrl = () => {
+  const resetVideoUrl = () => {
     setVideoUrl("");
     setPastedLink("");
     setAlertMessage("");
+  };
+
+  const clearText = () => {
+    setPastedLink("");
+  };
+
+  const pasteClipboard = async () => {
+    try {
+      const copiedLink = await navigator.clipboard.readText();
+      setPastedLink(copiedLink);
+    } catch (err) {
+      console.log("Failed to read clipboard contents: ", err);
+    }
   };
 
   return (
@@ -54,10 +67,12 @@ const Home: NextPage = () => {
               handleChange={handleChange}
               pastedLink={pastedLink}
               alertMessage={alertMessage}
+              clearText={clearText}
+              pasteClipboard={pasteClipboard}
             />
           </>
         ) : (
-          <IFrameSection videoUrl={videoUrl} clearVideoUrl={clearVideoUrl} />
+          <IFrameSection videoUrl={videoUrl} resetVideoUrl={resetVideoUrl} />
         )}
       </main>
     </>

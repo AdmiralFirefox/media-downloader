@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 1.5em 1.3em;
+    padding: 1.5em;
     border-radius: 20px;
 
     input {
@@ -36,6 +36,7 @@
       color: theme-provider.$white-color;
       font-weight: 700;
       cursor: pointer;
+      font-size: 1rem;
       transition: background 0.2s ease-in-out;
 
       &:hover {
@@ -55,6 +56,60 @@
   font-size: 1.3rem;
   font-weight: 700;
   color: theme-provider.$red-color;
+}
+
+.icons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.7em;
+
+  // Trash Icon
+  .trash-icon-wrapper {
+    background: theme-provider.$red-color;
+    border: none;
+    padding: 0.8em;
+    margin-right: 2em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background: theme-provider.$red-color-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .trash-icon {
+      font-size: 1.7rem;
+      color: theme-provider.$white-color;
+    }
+  }
+
+  // Paste Icon
+  .paste-icon-wrapper {
+    background: theme-provider.$slightly-dark-blue;
+    border: none;
+    padding: 0.8em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background: theme-provider.$slightly-dark-blue-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    .paste-icon {
+      font-size: 1.7rem;
+      color: theme-provider.$white-color;
+    }
+  }
 }
 
 @media (min-width: theme-provider.$small-media-query-value) {

@@ -4,14 +4,14 @@ import styles from "../../styles/sections/IFrameSection.module.scss";
 
 interface IFrameSectionProps {
   videoUrl: string;
-  clearVideoUrl: () => void;
+  resetVideoUrl: () => void;
 }
 
-const IFrameSection: FC<IFrameSectionProps> = ({ videoUrl, clearVideoUrl }) => {
+const IFrameSection: FC<IFrameSectionProps> = ({ videoUrl, resetVideoUrl }) => {
   return (
     <>
       <div className={styles["clear-url-button-wrapper"]}>
-        <button onClick={clearVideoUrl} className={styles["clear-url-button"]}>
+        <button onClick={resetVideoUrl} className={styles["clear-url-button"]}>
           Convert Another Video
         </button>
       </div>
