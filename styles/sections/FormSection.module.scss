@@ -1,4 +1,4 @@
-@use "themeprovider/themeprovider" as theme-provider;
+@use "../themeprovider/themeprovider" as theme-provider;
 
 .form-container {
   display: flex;
@@ -35,8 +35,26 @@
       background: theme-provider.$light-blue;
       color: theme-provider.$white-color;
       font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+
+      &:hover {
+        background: theme-provider.$light-blue-hover;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
   }
+}
+
+.alert-message {
+  text-align: center;
+  margin: 0.5em;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: theme-provider.$red-color;
 }
 
 @media (min-width: theme-provider.$small-media-query-value) {

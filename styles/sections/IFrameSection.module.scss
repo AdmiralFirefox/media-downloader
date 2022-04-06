@@ -1,0 +1,29 @@
+@use "../themeprovider/themeprovider" as theme-provider;
+
+.clear-url-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+  position: relative;
+  z-index: 2;
+
+  .clear-url-button {
+    width: min(90%, 40em);
+    border: none;
+    padding: 1.5em;
+    background: theme-provider.$light-blue;
+    color: theme-provider.$white-color;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background: theme-provider.$light-blue-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

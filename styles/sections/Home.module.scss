@@ -1,4 +1,4 @@
-@use "./themeprovider/themeprovider" as theme-provider;
+@use "../themeprovider/themeprovider" as theme-provider;
 
 .web-header {
   background: theme-provider.$dark-blue;
