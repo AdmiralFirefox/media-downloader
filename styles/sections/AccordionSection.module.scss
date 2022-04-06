@@ -1,0 +1,9 @@
+.accordion-section-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 7em 0em;
+
+  .accordion-section {
+    width: min(90%, 55em);
+  }
+}

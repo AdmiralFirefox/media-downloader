@@ -2,8 +2,9 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import FormSection from "../components/Sections/FormSection";
-import styles from "../styles/sections/Home.module.scss";
 import IFrameSection from "../components/Sections/IFrameSection";
+import AccordionSection from "../components/Sections/AccordionSection";
+import styles from "../styles/sections/Home.module.scss";
 
 const Home: NextPage = () => {
   const [videoUrl, setVideoUrl] = useState("");
@@ -74,6 +75,8 @@ const Home: NextPage = () => {
         ) : (
           <IFrameSection videoUrl={videoUrl} resetVideoUrl={resetVideoUrl} />
         )}
+
+        <AccordionSection />
       </main>
     </>
   );

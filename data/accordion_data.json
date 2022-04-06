@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "What is Media Downloader?",
+    "content": "Media Downloader is a website that allows you to download videos online."
+  },
+  {
+    "id": 2,
+    "title": "How to use?",
+    "content": "Copy the Video URL and paste it in the textbox and click convert. Then you can download at any available format."
+  },
+  {
+    "id": 3,
+    "title": "What are the supported Websites?",
+    "content": "It supports Youtube, Tiktok, Instagram, Facebook, Twitter, Vimeo, Soundcloud, VK, Dailymotion and AoL."
+  },
+  {
+    "id": 4,
+    "title": "It doesn't work, Help!",
+    "content": "Make sure that the link you've copied is a valid URL. If it still doesn't work, there may be problems with the API or it doesn't support the website but you can comeback and try again later."
+  }
+]
