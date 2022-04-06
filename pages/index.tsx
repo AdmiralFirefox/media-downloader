@@ -1,15 +1,19 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState, useEffect, useContext } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import FormSection from "../components/Sections/FormSection";
 import IFrameSection from "../components/Sections/IFrameSection";
 import AccordionSection from "../components/Sections/AccordionSection";
+import Switch from "../components/Switch";
+import { DarkModeContext } from "../context/DarkMode";
 import styles from "../styles/sections/Home.module.scss";
 
 const Home: NextPage = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [pastedLink, setPastedLink] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +40,13 @@ const Home: NextPage = () => {
     setPastedLink("");
   };
 
+  // Change Darkmode Background
+  useEffect(() => {
+    document.getElementsByTagName("body")[0].className = darkMode
+      ? styles["dark-background"]
+      : styles["light-background"];
+  }, [darkMode]);
+
   return (
     <>
       <header className={styles["web-header"]}>
@@ -50,6 +61,8 @@ const Home: NextPage = () => {
           />
         </div>
       </header>
+
+      <Switch />
 
       <main>
         {videoUrl === "" ? (

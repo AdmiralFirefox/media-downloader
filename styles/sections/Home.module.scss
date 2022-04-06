@@ -1,5 +1,15 @@
 @use "../themeprovider/themeprovider" as theme-provider;
 
+.dark-background {
+  background: theme-provider.$slightly-black-color;
+  transition: background 0.3s ease-in-out;
+}
+
+.light-background {
+  background: theme-provider.$white-color;
+  transition: background 0.3s ease-in-out;
+}
+
 .web-header {
   background: theme-provider.$dark-blue;
   padding: 1.3em 2em;
