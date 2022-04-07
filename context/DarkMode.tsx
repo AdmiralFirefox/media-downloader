@@ -12,7 +12,7 @@ const DarkMode: FC = ({ children }) => {
 
   const handleDarkModeChanges = (e: ChangeEvent<HTMLInputElement>) => {
     setDarkMode(e.target.checked);
-    setTheme(resolvedTheme === "light" ? "dark" : "light");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   // Save Darkmode Changes
