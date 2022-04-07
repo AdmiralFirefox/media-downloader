@@ -22,8 +22,8 @@ const Meta: FC<MetaProps> = ({ title, keywords, description }) => {
 
 Meta.defaultProps = {
   title: "Media Downloader",
-  keywords: "media downloader, social media downloader",
-  description: "A website for social media downloader",
+  keywords: "media downloader, social media downloader, video downloader, online video downloader",
+  description: "A website for downloading online videos from various websites.",
 };
 
 export default Meta;
