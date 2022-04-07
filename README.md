@@ -2,7 +2,7 @@
 
 A Media Downloder Website where you can download videos online.
 
-[You can access the website here.](awesome-media-downloader.vercel.app)
+[You can access the website here.](https://awesome-media-downloader.vercel.app)
 
 ## API Links
 
