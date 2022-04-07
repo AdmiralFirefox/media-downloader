@@ -1,11 +1,12 @@
 import { ChangeEvent, FormEvent, useState, useEffect, useContext } from "react";
 import type { NextPage } from "next";
+import { DarkModeContext } from "../context/DarkMode";
 import Image from "next/image";
 import FormSection from "../components/Sections/FormSection";
 import IFrameSection from "../components/Sections/IFrameSection";
 import AccordionSection from "../components/Sections/AccordionSection";
 import Switch from "../components/Switch";
-import { DarkModeContext } from "../context/DarkMode";
+import FooterWaves from "../components/Sections/FooterWaves";
 import styles from "../styles/sections/Home.module.scss";
 
 const Home: NextPage = () => {
@@ -81,6 +82,8 @@ const Home: NextPage = () => {
 
         <AccordionSection />
       </main>
+
+      <FooterWaves />
     </>
   );
 };
