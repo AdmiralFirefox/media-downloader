@@ -1,6 +1,6 @@
-import { ChangeEvent, FormEvent, useState, useEffect, useContext } from "react";
+import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import type { NextPage } from "next";
-import { DarkModeContext } from "../context/DarkMode";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import FormSection from "../components/Sections/FormSection";
 import IFrameSection from "../components/Sections/IFrameSection";
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const [pastedLink, setPastedLink] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
 
-  const { darkMode } = useContext(DarkModeContext);
+  const { resolvedTheme } = useTheme();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,10 +43,11 @@ const Home: NextPage = () => {
 
   // Change Darkmode Background
   useEffect(() => {
-    document.getElementsByTagName("body")[0].className = darkMode
-      ? styles["dark-background"]
-      : styles["light-background"];
-  }, [darkMode]);
+    document.getElementsByTagName("body")[0].className =
+      resolvedTheme === "dark"
+        ? styles["dark-background"]
+        : styles["light-background"];
+  }, [resolvedTheme]);
 
   return (
     <>

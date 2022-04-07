@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, createContext, ChangeEvent } from "react";
+import { useTheme } from "next-themes";
 
 export const DarkModeContext = createContext({
   darkMode: false,
@@ -7,9 +8,11 @@ export const DarkModeContext = createContext({
 
 const DarkMode: FC = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   const handleDarkModeChanges = (e: ChangeEvent<HTMLInputElement>) => {
     setDarkMode(e.target.checked);
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
 
   // Save Darkmode Changes
