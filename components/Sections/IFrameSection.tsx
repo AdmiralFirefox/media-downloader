@@ -25,7 +25,7 @@ const IFrameSection: FC<IFrameSectionProps> = ({ videoUrl, resetVideoUrl }) => {
           minHeight: "10em",
           width: "80%",
           border: "none",
-          marginTop: "-4em",
+          marginTop: "1em",
           background: "transparent",
         }}
       />
