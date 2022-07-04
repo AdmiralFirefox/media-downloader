@@ -19,7 +19,7 @@ const IFrameSection: FC<IFrameSectionProps> = ({ videoUrl, resetVideoUrl }) => {
         heightCalculationMethod="lowestElement"
         inPageLinks
         scrolling={false}
-        src={`https://yt-download.org/api/widget?url=${videoUrl}`}
+        src={`https://yt-download.org/api/widgetv2?url=${videoUrl}`}
         style={{
           minWidth: "100%",
           minHeight: "10em",
