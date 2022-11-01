@@ -68,15 +68,13 @@ const Home: NextPage = () => {
 
       <main>
         {videoUrl === "" ? (
-          <>
-            <FormSection
-              handleSubmit={handleSubmit}
-              handleChange={handleChange}
-              pastedLink={pastedLink}
-              alertMessage={alertMessage}
-              clearText={clearText}
-            />
-          </>
+          <FormSection
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+            pastedLink={pastedLink}
+            alertMessage={alertMessage}
+            clearText={clearText}
+          />
         ) : (
           <IFrameSection videoUrl={videoUrl} resetVideoUrl={resetVideoUrl} />
         )}
