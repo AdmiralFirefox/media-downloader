@@ -30,4 +30,4 @@ A Media Downloder Website where you can download videos online.
 
 [Github API Link](https://github.com/matthew-asuncion/Fast-YouTube-to-MP3-Converter-API)
 
-[API Documentation](https://www.yt-download.org/developers)
+[API Documentation](https://convert2mp3s.com/developers)
