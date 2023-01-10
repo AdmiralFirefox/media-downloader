@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [pastedLink, setPastedLink] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
+  const [error, setError] = useState(false);
 
   const { resolvedTheme } = useTheme();
 
@@ -22,8 +23,10 @@ const Home: NextPage = () => {
     if (pastedLink.includes("https://") && pastedLink !== "") {
       setVideoUrl(pastedLink);
       setAlertMessage("");
+      setError(false);
     } else {
       setAlertMessage("Please enter a valid url");
+      setError(true);
     }
   };
 
@@ -35,6 +38,7 @@ const Home: NextPage = () => {
     setVideoUrl("");
     setPastedLink("");
     setAlertMessage("");
+    setError(false);
   };
 
   const clearText = () => {
@@ -74,6 +78,7 @@ const Home: NextPage = () => {
             pastedLink={pastedLink}
             alertMessage={alertMessage}
             clearText={clearText}
+            error={error}
           />
         ) : (
           <IFrameSection videoUrl={videoUrl} resetVideoUrl={resetVideoUrl} />

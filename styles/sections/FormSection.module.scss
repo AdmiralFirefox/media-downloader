@@ -1,5 +1,28 @@
 @use "../themeprovider/themeprovider" as theme-provider;
 
+$input-text-length: 44em;
+$form-error-border: 5px solid theme-provider.$red-color;
+
+@mixin form-wrapper($form-border, $placeholder-color) {
+  padding: 1em;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: theme-provider.$white-color;
+  color: theme-provider.$black-color;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0px;
+  border: $form-border;
+
+  &::placeholder {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $placeholder-color;
+    opacity: 0.7;
+  }
+}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -7,33 +30,23 @@
 
   .form-wrapper {
     background: theme-provider.$slightly-light-blue;
-    width: min(90%, 40em);
+    width: min(90%, $input-text-length);
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     padding: 1.5em;
-    border-radius: 20px;
+    border-radius: 10px;
 
-    input {
-      padding: 1em;
-      outline: none;
-      border: none;
-      box-shadow: none;
-      background: theme-provider.$white-color;
-      color: theme-provider.$black-color;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 0;
+    .input-form {
+      @include form-wrapper(none, theme-provider.$dark-blue);
+    }
 
-      &::placeholder {
-        font-size: 1rem;
-        font-weight: 700;
-      }
+    .input-form-error-active {
+      @include form-wrapper($form-error-border, theme-provider.$red-color);
     }
 
     button {
       border: none;
-      padding: 1em;
+      padding: 1.2em;
       background: theme-provider.$light-blue;
       color: theme-provider.$white-color;
       font-weight: 700;
@@ -54,10 +67,11 @@
 
 .alert-message {
   text-align: center;
-  margin: 0.5em;
+  margin: 0.7em 0.5em 1.7em 0.5em;
   font-size: 1.3rem;
   font-weight: 700;
   color: theme-provider.$red-color;
+  font-style: italic;
 }
 
 .icons-wrapper {
@@ -95,9 +109,14 @@
     .form-wrapper {
       flex-direction: row;
       justify-content: center;
+      padding: 2em;
 
-      input {
-        width: min(100%, 30em);
+      .input-form {
+        width: min(100%, $input-text-length);
+      }
+
+      .input-form-error-active {
+        width: min(100%, $input-text-length);
       }
     }
   }

@@ -9,6 +9,7 @@ interface FormSectionProps {
   clearText: () => void;
   pastedLink: string;
   alertMessage: string;
+  error: boolean;
 }
 
 const FormSection: FC<FormSectionProps> = ({
@@ -17,6 +18,7 @@ const FormSection: FC<FormSectionProps> = ({
   handleChange,
   alertMessage,
   clearText,
+  error,
 }) => {
   return (
     <>
@@ -27,6 +29,10 @@ const FormSection: FC<FormSectionProps> = ({
             placeholder="Enter Valid Link"
             value={pastedLink}
             onChange={handleChange}
+            className={
+              error ? styles["input-form-error-active"] : styles["input-form"]
+            }
+            required
           />
           <button type="submit">Convert</button>
         </form>
