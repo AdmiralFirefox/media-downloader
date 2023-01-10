@@ -61,9 +61,10 @@ const Home: NextPage = () => {
           <Image
             src="/assets/WebLogo.png"
             alt="Web Logo"
-            layout="fill"
-            objectFit="cover"
-            priority={true}
+            fill
+            sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
           />
         </div>
       </header>

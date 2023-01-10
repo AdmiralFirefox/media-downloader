@@ -33,7 +33,12 @@
   div {
     position: relative;
     width: 5.5em;
-    height: 5.5em;
+    height: 6em;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 }
 
