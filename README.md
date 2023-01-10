@@ -1,8 +1,10 @@
 # Media Downloader
 
-A Media Downloder Website where you can download videos online.
+A Progressive Web Application **(PWA)** Media Downloder where you can download videos online.
 
 [You can access the website here.](https://awesome-media-downloader.vercel.app)
+
+**Note: You can also download it on your local machine.** 
 
 <br />
 
